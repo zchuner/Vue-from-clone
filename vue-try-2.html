@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>布局</title>
+
+	<style>
+	#box{
+		display:-webkit-box;
+		/*-webkit-box-orient:vertical;*/
+		/*-webkit-box-direction:reverse;*/
+		-webkit-box-pack:center ;
+		-webkit-box-align:center;
+		height:300px;
+	}
+	.box-comment{
+		border:1px solid #fff;
+		height:100px;
+		width:100px;
+	}
+	.left{
+		background:red;
+		/*-webkit-box-flex:1;*/
+	}
+	.center{
+		background:yellow;
+		/*-webkit-box-flex:2;*/
+	}
+	.right{
+		background:pink;
+		/*-webkit-box-flex:1.5;*/
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="box-comment left">left</div>
+		<div class="box-comment center">cneter</div>
+		<div class="box-comment right">right</div>
+	</div>
+	<div id="seconds">60</div>
+	<input type="button" name="ji shi " value="shi"  id="inp">
+<script type="text/javascript">
+	// var oS=document.getElementById("seconds");
+	// var oT=document.getElementById("inp");
+	// var n=60;
+	// oT.onclick=function(){
+	// 	setInterval(function(){
+	// 		n--;
+	// 		oS.value=n;
+	// 	},1000)
+	// }
+
+
+	var o={
+		a:10,
+		b:{
+			a:12,
+			fn:function(){
+				var a=11;
+				console.log(this.a);
+			}
+		}
+	}
+	o.b.fn();
+	var j=o.b.fn;
+	j();
+
+</script>
+
+
+</body>
+</html>

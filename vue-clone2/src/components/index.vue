@@ -3,7 +3,7 @@
     <el-header calss="header">
     	<el-row>
     		<el-col :span="23">
-    			<el-menu :default-active="$route.path" mode="horizontal" class="nav-box" background-color="#545c64" text-color="#fff" cative-text>
+    			<el-menu :default-active="$route.path" mode="horizontal" class="nav-box" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
     				<template v-for="item in newrouter[0].children" v-if="!item.hidden">
     					<router-link v-if="!item.hidden&&!item.children" :to="item.path">
     						<el-menu-item :index="item.path">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: 'index',
   data () {
@@ -33,19 +33,19 @@ export default {
       
     }
   },
-  computed:{
+  computed: {
   	...mapGetters([
   		'newrouter'
   	])
   },
-  methods:{
-  	logout(){
-  		this.$store.dispatch('Logout').then(()=>{
-  			this.$router.push({path:'/login'});
-  		}).catch(err=>{
-  			this.$message.error(err)
-  		})
-  	}
+  methods: {
+    logout(){
+      this.$store.dispatch('Logout').then(() => {
+            this.$router.push({ path: '/login' });
+        }).catch(err => {
+            this.$message.error(err);
+        });
+    }
   },
   mouted(){
 

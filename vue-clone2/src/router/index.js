@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import login from '@/components/login'
+import Login from '@/components/login'
 import Index from '@/components/index'
 Vue.use(Router)
 
@@ -14,37 +14,47 @@ export default new Router({
   routes: [
     {
       path: '/login',
-      name: 'login',
-      component: login
+      name: 'Login',
+      component: Login
     }
   ]
 });
 
-export const powerRouter=[
-	{
-		path:'/',
-		redirect:'/red',
-		name:'index',
-		component:Index,
-		hidden:false,
-		children:[
-			{
-				path:'/red',
-				name:'red',
-				component:red
-			},
-			{
-				path:'/yellow',
-				name:'yellow',
-				component:yellow,
-				meta:{role:'B'}
-			},
-			{
-				path:'/blue',
-				name:'blue',
-				component:blue,
-				meta:{role:'C'}
-			}
-		]
-	}
-]
+export const powerRouter =[    
+    { path: '/',redirect:'/red', name: 'index',component: Index,hidden:false,
+      children: [
+        { path: '/red', name: 'red', component: red,},
+        { path: '/yellow', name: 'yellow', component: yellow, meta: {role: 'B'}},
+        { path: '/blue', name: 'blue', component: blue, meta: {role: 'C'}}
+      ]
+    }
+];
+
+// export const powerRouter=[
+// 	{
+// 		path:'/',
+// 		redirect:'/red',
+// 		name:'index',
+// 		component:Index,
+// 		hidden:false,
+// 		children:[
+// 			{
+// 				path:'/red',
+// 				name:'red',
+// 				component:red
+// 			},
+// 			{
+// 				path:'/yellow',
+// 				name:'yellow',
+// 				component:yellow,
+// 				meta:{role:'B'}
+// 			},
+// 			{
+// 				path:'/blue',
+// 				name:'blue',
+// 				component:blue,
+// 				meta:{role:'C'}
+// 			}
+// 		]
+// 	}
+// ]

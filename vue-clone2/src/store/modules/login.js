@@ -1,26 +1,25 @@
 import { loginByUserInfo } from '../../api/login'
-
-const login={
-	state:{
-		username:sessionStorage.getItem('USERNAME'),
-		role:sessionStorage.getItem('ROLE'),
-  		introduce:'',
-  		newrouter:[]
-	},
-	mutations:{
-		SET_USERNAME:(state,username)=>{
-			state.username=username;
-		},
-		SET_ROLE:(state,role)=>{
-			state.role=role;
-		},
-		SET_INTRODUCE:(state,introduce)=>{
-			state.introduce=introduce;
-		},
-		SET_NEWROUTER:(state,newrouter)=>{
-			state.newrouter=newrouter;
-		}
-	},
+const login = {
+  state: {
+  	username:sessionStorage.getItem('USERNAME'),
+  	role:sessionStorage.getItem('ROLE'),
+  	introduce:'',
+  	newrouter:[],
+  },
+	mutations: {
+	  	SET_USERNAME:(state, username) => {
+	  		state.username = username;
+	  	},
+	  	SET_ROLE:(state, role) => {
+	  		state.role = role;
+	  	},
+	  	SET_INTRODUCE:(state, introduce) =>{
+	  		state.introduce = introduce;
+	  	},
+	  	SET_NEWROUER:(state, newrouter) =>{
+	  		state.newrouter = newrouter;
+	  	},
+  	},
 	actions:{
 		Logins({commit},info){
 			return new Promise((resolve,reject)=>{
@@ -65,7 +64,7 @@ const login={
 		}
 	}
 }
- export default login
+ export default login;
 
 
 

@@ -1,14 +1,14 @@
 <template>
-  <div class="login-box">
-    <el-form label-position="right" label-widrh="60pc" :model="loginfrom">
+  <div class="login_box">
+    <el-form label-position="right" label-width="60px" :model="loginfrom">
       <el-form-item label="用户名">
         <el-input v-model="loginfrom.username"></el-input>
       </el-form-item>
       <el-form-item label="密码">
         <el-input type="password" v-model="loginfrom.pew"></el-input>
       </el-form-item>
-      <el-form-item >
-        <el-button type="primary" @click="submituUserInfo(loginfrom)">登陆</el-button>
+      <el-form-item>
+        <el-button type="primary" @click="submituUserInfo(loginfrom)">登录</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -26,21 +26,21 @@ export default {
     }
   },
   methods:{
-    submituUserInfo(data){
-      console.log(data);
-      this.$store.dispatch('Logins',data).then(res=>{
-        this.$router.push({path:'/index'});
-      }).catch(()=>{
+     submituUserInfo(data){
+        console.log(data);
+         this.$store.dispatch('Logins',data).then(res => { 
+          this.$router.push({ path: '/' });
+        }).catch(() => {
 
-      })
-    }
+        })
+     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.login-box{
+.login_box{
     width: 280px;
     position: fixed;
     left: 19%;
